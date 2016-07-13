@@ -1,0 +1,20 @@
+# Notepad++ Advanced Search
+Open the find/replace dialog.
+At the bottom will be some Search mode options.  Select "Extended (\n \r \t \0 \x...)"
+In either the Find what or the Replace with field entries, you can use the following escapes:
+\n  new line (LF)
+\r   carriage return (CR)
+\t   tab character
+\0  null character
+\xddd   special character with code ddd
+
+# Notepad++ Regular Expressions
+- [!] finds the exclamation character.
+- .* selects the rest of the line.
+- (\+.*)(Item) \+ finds the + character. | .* selects the text after the + up until the word "Item" | Item finds the string "Item" | () allow us to access whatever is inside the parentheses. The first set of parentheses may be accessed with \1 and the second set with \2.
+- \1\r\n\2 will take + and whatever text comes after it, will then add a new line, and place the string "Item" on the new line.
+- A-Z finds all letters of the alphabet in upper case.
+- a-z finds all lower case letters.
+- A-Za-z will find all alphabetic characters.
+- [^...] is the inverse. So, if we put these three together: [^A-Za-z] finds any character except an alphabetic character.
+- Notice that only one of the [^A-Za-z] is in parentheses (). This is recalled by \1 in the Replace with field. The characters outside of the parentheses are discarded.
